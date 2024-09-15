@@ -32,7 +32,7 @@ import cloudinary.api
 SECRET_KEY = 'django-insecure-j7ljvxum!*pd^5fh35kv=d%_uehxf_s@c=ez(l721pbo7m6hlz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "8000-axtegenarno-photography-qg8joh9fqp5.ws.codeinstitute-ide.net",
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'coursebooker',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -96,6 +97,11 @@ WSGI_APPLICATION = 'photocourse.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 
 # Password validation
