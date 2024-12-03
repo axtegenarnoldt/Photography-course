@@ -22,6 +22,7 @@ from coursebooker.views import my_blog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     path('coursebooker/', my_blog, name='coursebooker'),
     
 ]

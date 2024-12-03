@@ -30,9 +30,10 @@ import cloudinary.api
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-j7ljvxum!*pd^5fh35kv=d%_uehxf_s@c=ez(l721pbo7m6hlz'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "8000-axtegenarno-photography-qg8joh9fqp5.ws.codeinstitute-ide.net", ".herokuapp.com"]
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'coursebooker',
     'cloudinary',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
