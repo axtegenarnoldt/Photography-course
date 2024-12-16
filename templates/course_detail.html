@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block body_class %}{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>{{ course.title }}</h1>
+            
+            {% if course.featured_image %}
+            <img src="{{ course.featured_image.url }}" alt="{{ course.title }}"
+            width="500" height="300">
+            {% else %}
+            <img src="https://res.cloudinary.com/cloudebr/image/upload/v1632744141/static/media/images/default_hike_pic_ni7pzb.jpg"
+                alt="Default course image">
+            {% endif %}
+        </div>
+
+        <div class="course-content">
+            <pre>{{ course.content|safe }}</pre>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="course-info">
+                <p><strong>Price:</strong> ${{ course.price }}</p>
+                <p><strong>Difficulty:</strong> {{ course.difficulty }}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <h3>Schedule</h3>
+            <ul>
+                {% for schedule in course.schedule %}
+                    <li>{{ schedule.day }}, {{ schedule.time }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% endblock content %}
