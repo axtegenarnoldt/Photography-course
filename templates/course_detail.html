@@ -31,6 +31,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
     <div class="row mt-4">
@@ -42,5 +43,55 @@
                 {% endfor %}
             </ul>
         </div>
+    </div>
 
-        {% endblock content %}
+    <div class="col-sm-2 col-lg-1 xs-col-width">
+        <!-- show the number of comments -->
+        {% with comments.count as total_comments %}
+        <strong class="text-secondary"><i class="far fa-comments"></i>
+            {{ total_comments }}
+        </strong>
+        {% endwith %}
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div> 
+
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Comments:</h3>
+                <div class="card-body">
+                    <!-- loop to iterate through each comment in comments -->
+                    {% for comment in comments %}
+                    <div class="comments">
+                        <p class="font-weight-bold">
+                            <!-- display name of user that make the comment and when is was created  -->
+                            {{  comment.username }}
+                            <span class=" text-muted font-weight-normal">
+                                {{ comment.created_on }}
+                            </span> wrote:
+                         </p>
+                         <!-- The body of the comment with formatting -->
+                        {{  comment.message | linebreaks }}
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+            <div class="col-md-4 card mb-4  mt-3 ">
+                <div class="card-body">
+                    <!-- allow user to add comments if logged in  -->
+                    {% if user.is_authenticated %}
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="post" class="comment-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-block btn-form mb-4">Submit</button>
+                    </form>
+                        {% endif %}
+                </div>
+            </div>
+    </div>
+
+ {% endblock content %}

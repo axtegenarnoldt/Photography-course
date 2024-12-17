@@ -193,3 +193,9 @@ footer {
 }
 
 
+/* For small screen sizes */
+@media screen and (max-width: 600px) {
+    .xs-col-width {
+        width: auto;
+    }
+}
