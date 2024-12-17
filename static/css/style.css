@@ -184,6 +184,13 @@ body {
     
 }
 
+.img-cont {
+    background-image: url("../img/pexels-nickoloui-986733.png");
+    background-size: cover;
+    background-position: 70%;
+    padding: 40px;
+}
+
 
 /* Footer */
 footer {

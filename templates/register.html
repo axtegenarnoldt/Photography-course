@@ -1,14 +1,59 @@
-{% extends 'base.html' %}
-{% block body_class %}{ }{% endblock %}
-{% load static %}
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Register" %}| CourseBooker{% endblock %}
 
 {% block content %}
-<h2>Sign up</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
 
-<p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    <div class="container-fluid">
+        <div class="auth-container">
+            <div class="row">
+                <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3 mt-5 pt-5">
+                    <div class="auth-card bg-white shadow p-4 img-cont">
+                        <h2 class="mb-4 text-center">{% trans "Register" %}</h2>
+
+                        <p class=" mb-4 text-black">{% blocktrans %}Welcome to the Course Booker! Do you already have an account? If so, then please <a href="{{ signin_url }}">Sign in</a> instead.{% endblocktrans %}</p>
+                      
+        <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form class="signup" id="signup_form" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="id_username" class="sr-only">Username</label>
+                <input type="text" name="username" id="id_username" class="form-control" placeholder="Username" required
+                autocomplete="username" minlength="1" maxlength="50">
+            </div>
+            <div class="form-group mb-3">
+                <label for="id_email" class="sr-only">Email</label>
+                <input type="email" name="email" id="id_email" class="form-control" placeholder="Email" required
+                autocomplete="email">
+            </div>
+            <div class="form-group mb-4">
+                <label for="id_password1" class="sr-only">Password</label>
+                <input type="password" name="password1" id="id_password1" class="form-control" placeholder="Password" required
+                autocomplete="new-password">
+            </div>
+            <div class="form-group mb-4">
+                <label for="id_password2" class="sr-only">Confirm Password</label>
+                <input type="password" name="password2" id="id_password2" class="form-control" placeholder="Confirm Password" required>
+            </div>
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="btn btn-primary w-100 mt-4" type="submit" style="background-color: black; color: white; border: none; outline: none;">{% trans "Register" %}</button>
+            </form>
+            {% if form.errors %}
+            <div class="alert alert-danger mt-3" role="alert">
+            {% for error in form.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+    </div>
+
+
 {% endblock %}
