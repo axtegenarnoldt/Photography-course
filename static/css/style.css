@@ -6,14 +6,20 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #000000;
 }
 
 .jumbotron {
-    background-image: url("");
+    background-image: url("../img/pexels-nickoloui-986733.png");
     background-size: cover;
     padding-top: 1%;
     padding-bottom: 25%;
+    
+}
+
+.welcome-text {
+    text-align: center;
+    align-items: center;
 }
 
 .red-o {
@@ -37,12 +43,15 @@ body {
 }
 
 .card {
-    border: none;
-    background-color: transparent;
+   
 }
 
 .image-container {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
 }
 
 .image-flash {
@@ -50,7 +59,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #a4a9a9;
 }
 
 .scale {
@@ -131,7 +140,7 @@ body {
 }
 
 .link {
-    color: #23BBBB;
+    color: #9fa5a5;
     text-decoration: none;
 }
 
@@ -167,6 +176,20 @@ body {
     color: rgb(222, 146, 168);
 }
 
+/* Costum CSS */
+.explore {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    
+}
 
+
+/* Footer */
+footer {
+    background-color: rgb(65, 94, 84);
+    margin-top: auto;
+    width: 100%;
+}
 
 

@@ -9,12 +9,9 @@
 <div class="container-fluid">
     <!-- jumbotron for an introduction message -->
     <div class="jumbotron jumbotron-img">
-        <div class="welcome-text">
+        <div class="welcome-text explore">
             <h1>Explore Our Courses</h1>
-            <h4>Find the perfect photography course for you</h4>
-            <span class="quote-text">
-                Capture life's moments - Unknown
-            </span>
+            <h4>- Find the perfect photography course for you</h4>
         </div>
     </div>
 
@@ -35,12 +32,12 @@
                                 <img class="card-img-top" src="{{ course.featured_image.url }}">
                                 {% endif %}
                                 {% if course.difficulty == 0 %}
-                                <div class="image-flash image-bkgd-easy">
+                                <div class="image-flash">
                                     <p class="difficulty">Beginner</p>
                                 </div>
                                 {% elif course.difficulty == 1 %}
-                                <div class="image-flash image-bkgd-mod">
-                                    <p class="difficulty">Intermediate</p>
+                                <div class="image-flash">
+                                    <p class="difficulty">Advanced</p>
                                 </div>
                                 {% endif %}
                             </div>
