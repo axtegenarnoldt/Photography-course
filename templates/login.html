@@ -5,21 +5,24 @@
 {% block head_title %}{% trans "Sign In" %}| CourseBooker{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+
+
+<div class="container-fluid img-cont">
     <div class="auth-container d-flex justify-content-center align-items-center min-vh-100">
         <div class="col-md-8 col-lg-6">
-            <div class="auth-card bg-white shadow p-4">
-                <h2 class="mb-4 text-center">{% trans "Sign In" %}</h2>
+            <div class="auth-card text-center shadow p-4 signin-box">
+                <h2 class="mb-4 text-white text-center">{% trans "Sign In" %}</h2>
 
-                <p class="mb-4 text-black">{% blocktrans %}Welcome! To book a Photography course, please sign in! If you don't have an account, please <a href="{{ signup_url }}">Sign up</a> instead.{% endblocktrans %}</p>
+                <p class="mb-4 text-white">{% blocktrans %}Welcome! To book a Photography course, please sign in! If you don't have an account, please <a href="{{ signup_url }}">Sign up</a> instead.{% endblocktrans %}</p>
 
                 <form class="signin" id="signin_form" method="post" action="{% url 'login' %}">
                     {% csrf_token %}
                     {{ form }}
-                    <button type="submit" class="btn btn-primary w-100 mt-4">Sign In</button>
+                    <button type="submit" class="btn btn-primary w-100 mt-4" style="background-color: black; color: white; border: none; outline: none;">Sign In</button>
                 </form>
             </div>
-        </div>
+         </div>
     </div>
-</div>
+</div>    
+
 {% endblock %}

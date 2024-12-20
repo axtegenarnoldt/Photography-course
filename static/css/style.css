@@ -42,9 +42,6 @@ body {
     background-color: #F9FAFC;
 }
 
-.card {
-   
-}
 
 .image-container {
     display: flex;
@@ -177,7 +174,8 @@ body {
 
 /* Costum CSS */
 .explore {
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     font-family: 'Oswald', sans-serif;
     font-size: 80px;
     
@@ -189,6 +187,11 @@ body {
     background-position: 70%;
     padding: 40px;
 }
+
+.signin-box {
+    background-color: rgba(65, 94, 84, 0.8);
+}
+
 
 
 
