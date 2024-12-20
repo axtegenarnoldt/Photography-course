@@ -6,6 +6,9 @@
 
 {% block content %}
 
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
 <div class="container">
     <div class="row">
         <div class="col-lg-8">
@@ -87,6 +90,7 @@
                     <p>Posting as: {{ user.username }}</p>
                     <form method="post" class="comment-form">
                         {% csrf_token %}
+                        {{ form.as_p }}
                         <button type="submit" class="btn btn-block btn-form mb-4">Submit</button>
                     </form>
                         {% endif %}

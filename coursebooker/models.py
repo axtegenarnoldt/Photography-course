@@ -23,14 +23,18 @@ class Course(models.Model):
         ordering = ['difficulty']
 
 class Comment(models.Model):
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='comments')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    course = models.ForeignKey(
+        Course, on_delete=models.CASCADE, related_name="comments")
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
     text = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['created_on']
+    def __str__(self):
+        return f'Comment {self.message} by {self.username}'
 
 
 class Schedule(models.Model):
