@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block body_class %}{% endblock %}
+{% load static %}{% block content %}
+
+<div class="container">
+    <div class="row booking-title">
+        <h3>Your upcoming photography courses</h3>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col card mb-4 mt-3 left top">
+            <div class="card-body">
+                {% for booking in bookings %}
+                <div class="booking-details booking-card">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="{% url 'course_detail' booking.course.slug %}">
+                                <div class="col-auto">
+                                    {% if booking.course.featured_image %}
+                                    <img src="{{ booking.course.featured_image.url }}" alt="{{ booking.course.title }}" class="booking-img">
+                                    {% else %}
+                                    <img src="{% static 'images/default_course_image.jpg' %}" alt="Default course image" class="booking-img">
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col booking-summary">
+                            <div class="row">
+                                <a href="{% url 'course_detail' booking.course.slug %}">
+                                    <h4>{{ booking.course.title }}</h4>
+                                </a>
+                                <p>
+                                    Date: {{ booking.start_date }}<br>
+                                    Time: {{ booking.start_time }}
+                                </p>
+                            </div>
+                            <div class="row booking-icons">
+                                <div class="col-auto">
+                                    {% if booking.status == 'confirmed' %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-check-circle"></i>
+                                        Confirmed</p>
+                                    {% else %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-question-circle"></i>
+                                        Awaiting Confirmation</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <form action="{% url 'cancel_booking' %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-block btn-form mb-1" value="{{booking.id}}"
+                                    name="cancel_booking_id" onclick="return confirm('Are you sure you want to cancel this booking?')">Cancel Booking</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                You have no upcoming photography courses booked.
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="row booking-title">
+        <h3>Past photography courses</h3>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col card mb-4 mt-3 left top">
+            <div class="card-body">
+                {% for booking in past_bookings %}
+                <div class="booking-details booking-card">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="{% url 'course_detail' booking.course.slug %}">
+                                <div class="col-auto">
+                                    {% if booking.course.featured_image %}
+                                    <img src="{{ booking.course.featured_image.url }}" alt="{{ booking.course.title }}" class="booking-img">
+                                    {% else %}
+                                    <img src="{% static 'images/default_course_image.jpg' %}" alt="Default course image" class="booking-img">
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col booking-summary">
+                            <div class="row">
+                                <a href="{% url 'course_detail' booking.course.slug %}">
+                                    <h4>{{ booking.course.title }}</h4>
+                                </a>
+                                <p>
+                                    Date: {{ booking.start_date }}<br>
+                                    Time: {{ booking.start_time }}
+                                </p>
+                            </div>
+                            <div class="row booking-icons">
+                                <div class="col-auto">
+                                    <p class="card-text text-muted h6"><i class="fas fa-check-circle"></i>
+                                        Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                You have no past photography courses booked.
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

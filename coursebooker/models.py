@@ -21,6 +21,9 @@ class Course(models.Model):
 
     class Meta:
         ordering = ['difficulty']
+   
+    def __str__(self):
+        return self.title
 
 class Comment(models.Model):
     course = models.ForeignKey(
@@ -52,15 +55,24 @@ class Schedule(models.Model):
     def __str__(self):
         return f'Your photography course {self.course} is scheduled for {self.location} at {self.time}'
 
-class Bookings(models.Model):
+class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,
-                            related_name="user_bookings", unique_for_date='course__id')
+                          related_name="bookings")
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    attendees_count = models.PositiveIntegerField(validators=[MaxValueValidator(4)])
-    confirmed = models.BooleanField(default=False)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    status = models.CharField(max_length=20, choices=[
+        ('pending', 'Pending'),
+        ('confirmed', 'Confirmed'),
+        ('completed', 'Completed'),
+        ('cancelled', 'Cancelled')
+    ], default='pending')
 
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['user', 'course'], 
             name='unique_booking_per_user_per_course')
         ]
+
+    def __str__(self):
+        return f"{self.user.username} booking for {self.course.title}"

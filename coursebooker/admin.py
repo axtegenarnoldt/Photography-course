@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, Comment, Schedule, Bookings
+from .models import Course, Comment, Schedule, Booking
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.

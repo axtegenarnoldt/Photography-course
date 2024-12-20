@@ -1,31 +1,32 @@
-# Photography Course
+# Photography Course - Coursebooker
 <img src="" alt="image of website on different screens">
 
 ## Introduciton 
--
+- The Photography Course website is a project with a booking application for users how are interested to book different photography courses.
+
+When you visit the website you can look at different courses, read comments and register on the website. If you are a registerd user and are signed in you can book courses, leave comments and like courses.
+
+The Admin user can create new courses, approve comments and manage bookings.
 
 The site is live here: <a href=""></a>
 
 
 ## Contents
 **Table of content:**
-- [Snake Game](#snake-game)
+- [Photography Course](#photography-course)
     - [Introduction](#introduciton)
 - [Contents](#contents)
 - [User Experience](#user-experience)
     - [Site Owner Goals](#site-owner-goals)
     - [User Stories](#user-stories)
 - [Design](#design)
-    - [ASCII Art](#ascii-art)
     - [Colors](#colors)
     - [Flowchart](#flowchart)
 - [Features](#features)
     - [Welcome Screen](#welcome-screen)
-    - [Rules Screen](#rules-screen)
-    - [User Name](#user-name)
-    - [Main Game](#main-game)
-    - [Live Score](#live-score)
-    - [Game Over Screen](#game-over-screen)
+    - [Photography Course](#photography-course)
+    - [Register Screen](#register-screen)
+    - [Sign in Screen](#sign-in-screen)
 -[Features To Add](#features-to-add)
 - [Testing](#testing)
     - [Manual Testing](#manual-testing)
@@ -43,11 +44,10 @@ The site is live here: <a href=""></a>
 
 
 ### User Stories
-The goal..
+The project used GitHub as an Agile tool and linked Issues to define User Stories with acceptance criteria. Development of code for these stories was managed using a Kanban board. All User Stories were linked to a 'parent' Epic issue to show how they all supported the overarching goal of the project.
 
+User stories and kanaban board here <a href="https://github.com/users/axtegenarnoldt/projects/3/views/1">User Stories</a>
 
-### ASCII Art
-Both the start screen and game over screen displays ASCII art to make it stand out from the rest of the text in the game.
 
 ### Colors
 I used ..
@@ -57,7 +57,20 @@ I used ..
 ## Fetures
 
 ### Welcome Screen
-<img src="">
+<img src="docs/homescreen.png">
+The welcome screen displays the navbar, an image of a camera with a text that tells you to explore the different courses.
+
+### Photography Courses
+<img src="docs/coursees.png">
+On the home screen under the "welcome message" you can find the different photography courses we offer. You can click on them to read more about every course.
+
+### Register Screen
+<img src="docs/registerscreen.png">
+On the register screen you can see a welcome message for the course booker, instructions on how to register and a link too the sign in page if you alredy have registerd.
+
+### Sign in Screen
+<img src="docs/loginscreen.png">
+The sign in screen shows a welcome message, a link to the register page incase you don't have an account and the option to sign in.
 
 ## Features To Add
 
