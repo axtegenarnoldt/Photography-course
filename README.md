@@ -101,15 +101,15 @@ Things I like to add .. in the future to give a better user experience.
 | Play again | Press "p" on game over screen | Shows start menu so I can play again |
 
 ### CI Python Linter
-<img src="docs/pythonlinter.png">
-Validation of Python code in <a href="https://pep8ci.herokuapp.com/">CI Python Linter</a> - No errors
+<img src="">
+Validation of Python code in <a href="https://pep8ci.herokuapp.com/">CI Python Linter</a> 
 
 ### WAVE
 <img src="">
-Accessability testing at <a href="">Webaim</a> - No errors
+Accessability testing at <a href="">Webaim</a> 
 
 ### Lighthouse
-Tested the website in lighthouse for desktop.
+
 
 <img src="">
 
@@ -118,17 +118,27 @@ Tested the website in lighthouse for desktop.
 
  | Bug | Fixed/Unfixed |
  |-----|---------------|
- |  | Fixed |
- |  | Unfixed |
- |  | Fixed |
- |  | Fixed |
- |  | Fixed |
+ |  | |
+ |  |  |
+ |  | |
+ |  |  |
+ |  |  |
 
 ## Deployment
 
+### Clone Repository
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link there
+
+- Open a GitBash terminal and navigate to the directory where you want to locate the clone
+
+- On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
+
+- To install the packages required by the application use the command : pip install -r requirements.txt
+
+- When developing and running the application locally set DEBUG=True in the settings.py file
+
 ### Heroku
 
-To the deploy this project i followed the deployment guide from love sandwiches.
 
 Before i deployd i to Heroku i used "pip3 freeze > requirements.txt" to add dependencies that's requierd for the game to work in Heroku.
 <ol>
@@ -150,16 +160,20 @@ Before i deployd i to Heroku i used "pip3 freeze > requirements.txt" to add depe
 <li> When the deployment is done click on view to see your application. </li>
 </ol>
 
+## Cloudinary
+- Log in to Cloudinary - create an account if needed. To create the account provide your name, email and set up a password. For "primary interest" you can choose "Programmable Media for image and video API". Click "Create Account" and you will be sent an email to verify your account and bring you to the dashboard.
+- From the dashboard, copy the "API Environment variable" value by clicking on the "Copy to clipboard" link.
+- Log in to Heroku and go to the Application Configuration page for the application. Click on Settings and click on the "Reveal Config Vars" button.
+- Add a new Config Var called CLOUDINARY_URL and assign it the value copied from the Cloudinary dashboard, but remove the "CLOUDINARY_URL=" at the beginning of the string.
+- In order to be able to run the application on localhost, also add the CLOUDINARY_URL environment variable and value to env.py
+
 
 ## Credit
 
-Lucidcart was made at <a href="https://lucid.co/ ">Lucid</a> and ASCII art are from <a href="https://www.asciiart.eu/text-to-ascii-art">ASCII Art Archive</a>.
+The base structure is inspired from the, I Think Before I Blog project.
+
 
 | Knowledge about | Source |
 | ----------------|--------|
-| How to make a snake game using curses: Mision     Codigo youtube tutorial | https://www.youtube.com/watch?v=_IKIkRMfZJA |
-| how to make a snake game using curses: Partick Loeber youtube tutorial| https://www.youtube.com/watch?v=M_npdRYD4K0 |
-| how to use colors: | https://www.youtube.com/watch?v=JBE4OwdqzQ8 |
-| ASCII art | https://www.asciiart.eu/text-to-ascii-art |
-| Curses functions | https://docs.python.org/3/library/curses.html |
-| How to split lines in python | https://betterstack.com/community/questions/python-how-to-define-multiline-string/ |
+| How to use get_object_or_404() in Django-project| https://www.geeksforgeeks.org/get_object_or_404-method-in-django-models/ |
+

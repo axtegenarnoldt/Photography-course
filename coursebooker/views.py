@@ -13,7 +13,7 @@ class CourseList(ListView):
     queryset = Course.objects.filter(status=1).order_by('difficulty',
                                                       '-created_on')
     template_name = "index.html"
-    paginate_by = 6
+    paginate_by = 6 
 
 class CourseDetail(DetailView):
     model = Course
