@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load static %}
 
 {% block head_title %}{% trans "Register" %}| CourseBooker{% endblock %}
 
 {% block content %}
+
+<!--Costum CSS-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <div class="container-fluid">
         <div class="auth-container">
