@@ -32,9 +32,12 @@ import cloudinary.api
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-j7ljvxum!*pd^5fh35kv=d%_uehxf_s@c=ez(l721pbo7m6hlz'
 SECRET_KEY = os.environ.get("SECRET_KEY")
+CLOUDINARY_CLOUD_NAME = os.environ.get("CLOUDINARY_CLOUD_NAME")
+CLOUDINARY_API_KEY = os.environ.get("CLOUDINARY_API_KEY")
+CLOUDINARY_API_SECRET = os.environ.get("CLOUDINARY_API_SECRET")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "8000-axtegenarno-photography-qg8joh9fqp5.ws.codeinstitute-ide.net", ".herokuapp.com"]
@@ -154,15 +157,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Cloudinary configuration
 cloudinary.config(
-    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    api_key=os.environ.get("CLOUDINARY_API_KEY"),
-    api_secret=os.environ.get("CLOUDINARY_API_SECRET")
+    cloud_name=CLOUDINARY_CLOUD_NAME,
+    api_key=CLOUDINARY_API_KEY,
+    api_secret=CLOUDINARY_API_SECRET
 )
 
 CLOUDINARY = {
-    'cloud_name': os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    'api_key': os.environ.get("CLOUDINARY_API_KEY"),
-    'api_secret': os.environ.get("CLOUDINARY_API_SECRET")
+    'cloud_name': CLOUDINARY_CLOUD_NAME,
+    'api_key': CLOUDINARY_API_KEY,
+    'api_secret': CLOUDINARY_API_SECRET
 }
+
 
 
