@@ -37,7 +37,7 @@ CLOUDINARY_API_KEY = os.environ.get("CLOUDINARY_API_KEY")
 CLOUDINARY_API_SECRET = os.environ.get("CLOUDINARY_API_SECRET")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "8000-axtegenarno-photography-qg8joh9fqp5.ws.codeinstitute-ide.net", ".herokuapp.com"]
