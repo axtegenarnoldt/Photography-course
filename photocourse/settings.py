@@ -40,7 +40,8 @@ CLOUDINARY_API_SECRET = os.environ.get("CLOUDINARY_API_SECRET")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "8000-axtegenarno-photography-qg8joh9fqp5.ws.codeinstitute-ide.net", ".herokuapp.com"]
+    "8000-axtegenarno-photography-qg8joh9fqp5.ws.codeinstitute-ide.net", ".herokuapp.com", 
+    "https://pp4-photo-course-3aa13042f6e0.herokuapp.com/"]
 
 
 # Application definition
@@ -149,6 +150,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 
 # Default primary key field type

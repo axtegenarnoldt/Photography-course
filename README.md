@@ -8,7 +8,7 @@ When you visit the website you can look at different courses, read comments and 
 
 The Admin user can create new courses, approve comments and manage bookings.
 
-The site is live here: <a href=""></a>
+The site is live here: <a href="https://pp4-photo-course-3aa13042f6e0.herokuapp.com/">Photography Course</a>
 
 
 ## Contents
@@ -76,8 +76,10 @@ The sign in screen shows a welcome message, a link to the register page incase y
 
 Things I like to add .. in the future to give a better user experience.
 <ul>
-<li> - </li>
-<li> - </li>
+<li> - create the sign out option for registerd users </li>
+<li> - finnish the booking system</li>
+<li> - add the schedual for the courses</li>
+<li> - add more courses </li>
 <li> - </li>
 </ul>
 
@@ -87,18 +89,7 @@ Things I like to add .. in the future to give a better user experience.
 
 | Test | Step | Result |
 |------|------|--------|
-| Heroku |Open live site | Live site runs as expected |
-| press "r" to view rules | pressed "r" | Shows rules page |
-| Press any key to go back to start menu | tested with different keys | Shows start menu |
-| Press "p" to play game | Pressed "p" | show's next page |
-| Enter name | typing my name and Enter | Starts the game |
-| Enter name | Pressing Enter without typing my name | Ask's me to enter my name again |
-| Arrowkeys | pressing arrowkeys to control the snake | Snake moves as expected |
-| Border | Snake collides with border | Game ends and shows game over screen |
-| snakes body | Snake collides with itself | Game ends and shows game over screen |
-| Live score | Snake eat's food | Live score updates with +1 |
-| New food | Snake eats food | New food shows up in the game area |
-| Play again | Press "p" on game over screen | Shows start menu so I can play again |
+
 
 ### CI Python Linter
 <img src="">
@@ -118,7 +109,7 @@ Accessability testing at <a href="">Webaim</a>
 
  | Bug | Fixed/Unfixed |
  |-----|---------------|
- |  | |
+ | Solve the issue that made the hole application stop working | Unfixed |
  |  |  |
  |  | |
  |  |  |
@@ -170,7 +161,7 @@ Before i deployd i to Heroku i used "pip3 freeze > requirements.txt" to add depe
 
 ## Credit
 
-The base structure is inspired from the, I Think Before I Blog project.
+The base structure is inspired from the I Think Before I Blog project.
 
 
 | Knowledge about | Source |
